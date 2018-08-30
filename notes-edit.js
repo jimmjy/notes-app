@@ -1,4 +1,4 @@
-// variable setups
+// variables setup
 const noteId = location.hash.substring(1);
 let notes = getSavedNotes();
 let note = notes.find( (note) => note.id === noteId );
