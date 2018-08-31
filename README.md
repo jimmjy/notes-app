@@ -9,3 +9,5 @@ I also have it using local storage for saving, so if you always use the app in t
 always appear as you left them after closing and reopening the app.
 
 The filter option also renders changes as you type in an input as well as the sort feature.
+
+Check it out: https://jimmjy.github.io/notes-app/
