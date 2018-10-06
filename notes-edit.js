@@ -4,8 +4,8 @@ let notes = getSavedNotes();
 let note = notes.find( (note) => note.id === noteId );
 
 //returns to homepage if note does not exist, fail safe
-if (note === undefined) {
-    location.assign('/notes-app/index.html');
+if (!note) {
+    location.assign('./index.html');
 }
 
 // variables for inputs
@@ -36,7 +36,7 @@ notesBody.addEventListener('input', (e) => {
 document.querySelector('#remove-note').addEventListener('click', function () {
     removeNote(note.id);
     saveNotes(notes);
-    location.assign('/notes-app/index.html');
+    location.assign('./index.html');
 });
 
 // Dynamic update of notes information in other opened windows
@@ -45,8 +45,8 @@ window.addEventListener('storage', (e) => {
         notes = JSON.parse(e.newValue);
         note = notes.find( (note) => note.id === noteId );
 
-        if (note === undefined) {
-            location.assign('/notes-app/index.html');
+        if (!note) {
+            location.assign('./index.html');
         }
 
         notesTitle.value = note.title;

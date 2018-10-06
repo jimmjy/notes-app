@@ -1,12 +1,7 @@
 // Read existing notes from localStorage
 const getSavedNotes = () => {
     const notesJSON = localStorage.getItem('notes');
-
-    if (notesJSON !== null) {
-        return JSON.parse(notesJSON);
-    } else {
-        return [];
-    }
+    return notesJSON ? JSON.parse(notesJSON) : [];
 };
 
 // Save the notes to localStorage
@@ -43,12 +38,9 @@ const generateNoteDOM = (note) => {
     });
 
     // setup note title text
-    noteTitle.setAttribute('href', `/notes-app/edit.html#${note.id}`);
-    if (note.title.length > 0) {
-        noteTitle.textContent = note.title;
-    } else {
-        noteTitle.textContent = 'Unnamed note';
-    }
+    noteTitle.setAttribute('href', `./edit.html#${note.id}`);
+    
+    noteTitle.textContent = note.title.length > 0 ? note.title : 'Unnamed note';
 
     //append note title
     noteEl.appendChild(noteTitle);

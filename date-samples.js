@@ -15,9 +15,5 @@ const secondDate = new Date('November 25 1996 15:03:20');
 
 console.log(firstDate.getTime(), secondDate.getTime())
 
-if (firstDate.getTime() < secondDate.getTime()) {
-    console.log(firstDate.toString());
-} else {
-    console.log(secondDate.toString());
-}
+firstDate.getTime() < secondDate.getTime() ? console.log(firstDate.toString()) : console.log(secondDate.toString());
 

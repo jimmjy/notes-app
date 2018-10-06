@@ -20,7 +20,7 @@ document.querySelector('#create-note').addEventListener('click', (e) => {
         updatedAt: timeStamp,
     });
     saveNotes(notes);
-    location.assign(`/edit.html#${id}`);
+    location.assign(`./edit.html#${id}`);
 });
 
 // use input event for input to get data in realtime
